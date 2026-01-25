@@ -1,11 +1,13 @@
 //require('.dotenv').config({path: '.env'})
 import dotenv from "dotenv"
 import connectDB from "./db/index.js"
+import { app } from "./app.js";
 
-dotenv.config({
-    path: './env'
-})
+// dotenv.config({
+//     path: './env'
+// })
 
+dotenv.config();
 
 
 
@@ -21,7 +23,7 @@ connectDB()
         console.log(`app is listing on port no : `,process.env.PORT)
     })
 )
-.catch((Error)=>{
+.catch((error)=>{
     console.log(`error come here`,error
     )
 }
@@ -34,6 +36,7 @@ connectDB()
 
 
 
+console.log("MONGO URI =>", process.env.MONGODB_URI);
 
 
 
